@@ -93,13 +93,15 @@
 ## python3 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
-`pip3 list | grep [字符串]` | 查看安装与字符串相关 pip 包的情况 | 查看是否安装 request 库：`pip3 list | grep request`
+`pip3 list &#124; grep [字符串]` | 查看安装与字符串相关 pip 包的情况 | 查看是否安装 request 库：`pip3 list | grep request`
 `python3 -m venv [虚拟环境文件夹名]` | 创建虚拟环境 | 无
 `source [虚拟环境文件夹名]/bin/activate` | 激活虚拟环境 | 无
 `deactivate` | 退出虚拟环境 | 无
 `pip3 install [pip 包名] -i https://pypi.tuna.tsinghua.edu.cn/simple` | pip3 第三方库安装（镜像） | 无
 
 ## django 操作指令
+指令 | 用法 | 示例
+---------|----------|---------
 `python3 manage.py collectstatic` | 静态文件生成 | 无
 `python3 manage.py runserver [ip]:[端口号]` | 在对应 ip 和端口号运行 django 服务 | 无
 
