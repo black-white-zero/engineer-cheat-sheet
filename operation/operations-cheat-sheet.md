@@ -23,7 +23,7 @@
 ---------|----------|---------
 `lsof -i:[端口号]` | 根据端口号列出进程调用情况 | 查看端口号 8000 的进程调用情况：`lsof -i:8000`
 `kill -HUP [进程 ID 号]` | 重启进程 | 重启进程 ID 号为 43389 的进程：`kill -HUP 43389`
-`ps -ef | grep [字符串]` | 根据字符串查找相关的进程 | 查看与 btc 相关进程运行情况：`ps -ef | grep btc`
+`ps -ef \| grep [字符串]` | 根据字符串查找相关的进程 | 查看与 btc 相关进程运行情况：`ps -ef \| grep btc`
 
 ### 服务
  指令 | 用法 | 示例
@@ -93,7 +93,7 @@
 ## python3 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
-`pip3 list &#124; grep [字符串]` | 查看安装与字符串相关 pip 包的情况 | 查看是否安装 request 库：`pip3 list | grep request`
+`pip3 list \| grep [字符串]` | 查看安装与字符串相关 pip 包的情况 | 查看是否安装 request 库：`pip3 list \| grep request`
 `python3 -m venv [虚拟环境文件夹名]` | 创建虚拟环境 | 无
 `source [虚拟环境文件夹名]/bin/activate` | 激活虚拟环境 | 无
 `deactivate` | 退出虚拟环境 | 无
