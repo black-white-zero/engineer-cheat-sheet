@@ -40,6 +40,9 @@
 `ls -lht` | 查看当前目录下的文件大小 | 无
 `grep -c [字符串] [文件名]` | 查看文件中出现字符串的行数 | 统计日志文件 test.log 中的"ERROR"出现的行数：`grep -c 'ERROR' test.log`
 `grep -r --include="*.py" "[字符串]" . -l` | 当前目录及子目录下文件包含字符串的 py 脚本列表 | 无
+`tail -f [文件路径]` | 动态查看文件 | 无
+`tar -czvf [压缩后文件名].tar.gz [文件名]` | 压缩文件 | 无
+`tar -xzvf [压缩后文件名].tar.gz` | 解压文件 | 无
 
 ### 性能
 指令 | 用法 | 示例
@@ -117,6 +120,7 @@
 ## mysql 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
+`mysql -h 127.0.0.1 -u [用户名] -p` | docker-mysql 登录指令 | 无
 `mysql -u [用户名] -p` | mysql 登录指令 | 无
 `create database [数据库名];` | 创建数据库 | 无
 `show databases;` | 查看数据库列表 | 无
@@ -138,6 +142,8 @@
 `delete from [数据表名] where [查询字段名]=[查询字段值];` | 删除对应记录 | 无
 `create table [备份表名] like [被备份表名];` `insert into [备份表名] select * from [被备份表名];` | 表备份 | 无
 `use information_schema;` `select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='[数据库名]' and table_name='[数据表名]';` | 查看数据表存储大小 | 无
+`mysqldump -h 127.0.0.1 -u [用户名] -p [数据库名] [数据表名] > [导出数据表路径]/[文件名].sql` | 导出数据表 | 无
+`source [文件名]` | 导入数据表 | 无
 
 ### nginx 操作指令
 指令 | 用法 | 示例

@@ -9,6 +9,7 @@
 - 如何做好单元测试。
 - 英文信息获取方案。
   - 英文阅读能力的闭环提升。
+- 程序员之禅
 
 ### 初心
 奠定成为优秀程序员的认知基调。
@@ -99,9 +100,8 @@ Developer 要做的就是要能夠 Submit 可以讓 Codebase 進步的 Code，�
 
 
 ## 后续
-https://zhuanlan.zhihu.com/p/141257091
-https://www.infoq.cn/article/2015/05/Wiredrive-git-diff-staged
-https://www.google.com/search?q=%E5%AF%AB%E4%BB%A3%E7%A2%BC%E7%9A%84%E5%9B%9B%E5%80%8B%E5%A2%83%E7%95%8C&oq=%E5%AF%AB%E4%BB%A3%E7%A2%BC%E7%9A%84%E5%9B%9B%E5%80%8B%E5%A2%83%E7%95%8C&aqs=chrome..69i57.250j0j7&sourceid=chrome&ie=UTF-8
+
+
 
 整个软件开发过程就是按照瀑布模型的分阶段来进行，对应的方法就是瀑布
  模型中的方法，例如需求分析、架构设计;如果你选择了敏捷开发，则整个开发过程就是一种敏捷迭
@@ -177,3 +177,5 @@ https://www.google.com/search?q=%E5%AF%AB%E4%BB%A3%E7%A2%BC%E7%9A%84%E5%9B%9B%E5
 2. 开发对他人有用东西的幸福。
 3. 预期运行的愉悦。
 4. 不断学习新事物的快乐。
+
+编码与资源整合。
