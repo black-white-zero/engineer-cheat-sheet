@@ -101,6 +101,9 @@
 `source [虚拟环境文件夹名]/bin/activate` | 激活虚拟环境 | 无
 `deactivate` | 退出虚拟环境 | 无
 `pip3 install [pip 包名] -i https://pypi.tuna.tsinghua.edu.cn/simple` | pip3 第三方库安装（镜像） | 无
+`pip3 freeze > requirements.txt` | pip3 生成 requirements.txt 依赖包文件 | 无
+`pip3 install -r requirements.txt` | pip3 安装 requirements.txt | 无
+`python3 -m unittest xxx_test` | 运行单元测试 | 无
 
 ## django 操作指令
 指令 | 用法 | 示例
