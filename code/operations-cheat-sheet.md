@@ -12,9 +12,9 @@
   - [django 操作指令](#django-操作指令)
   - [iterm2 操作指令](#iterm2-操作指令)
   - [mysql 操作指令](#mysql-操作指令)
-    - [nginx 操作指令](#nginx-操作指令)
-    - [git 操作指令](#git-操作指令)
-    - [docker 操作指令](#docker-操作指令)
+  - [nginx 操作指令](#nginx-操作指令)
+  - [git 操作指令](#git-操作指令)
+  - [docker 操作指令](#docker-操作指令)
 
 ## Linux 操作指令
 
@@ -43,6 +43,8 @@
 `tail -f [文件路径]` | 动态查看文件 | 无
 `tar -czvf [压缩后文件名].tar.gz [文件名]` | 压缩文件 | 无
 `tar -xzvf [压缩后文件名].tar.gz` | 解压文件 | 无
+`sha256sum [文件名]` | 数据传输后验证文件完整性 | 无
+`sudo vim /etc/hosts` | 更改 hosts 文件 | 无
 
 ### 性能
 指令 | 用法 | 示例
@@ -104,6 +106,8 @@
 `pip3 freeze > requirements.txt` | pip3 生成 requirements.txt 依赖包文件 | 无
 `pip3 install -r requirements.txt` | pip3 安装 requirements.txt | 无
 `python3 -m unittest xxx_test` | 运行单元测试 | 无
+`python3 manage.py makemigrations` | 根据 Model 的改动创建新 migrate | 无
+`python3 manage.py migrate` | 根据 migrate 文件情况将 Model 改动同步到数据库 | 无
 
 ## django 操作指令
 指令 | 用法 | 示例
@@ -142,30 +146,39 @@
 `grant all privileges on [数据库名].* to '[用户名]'@'[主机名]';` `flush privileges;` | 授权用户拥有某个数据库全部权限 | 无
 `grant all privileges on [数据库名].* to '[用户名]'@'[主机名]'; flush privileges;` | 授权用户拥有某个数据库全部权限 | 无
 `update [数据表名] set [字段名]=[更改值] where [查询字段名]=[查询字段值];` | 更新数据表字段值 | 无
+`INSERT INTO [数据表名] ( [字段名 1], [字段名 2], ... ) VALUES ( [字段值 1], [字段值 2], ... );` | 新增一条数据 | 无
 `delete from [数据表名] where [查询字段名]=[查询字段值];` | 删除对应记录 | 无
 `create table [备份表名] like [被备份表名];` `insert into [备份表名] select * from [被备份表名];` | 表备份 | 无
 `use information_schema;` `select concat(round(sum(data_length/1024/1024),2),'MB') as data from tables where table_schema='[数据库名]' and table_name='[数据表名]';` | 查看数据表存储大小 | 无
 `mysqldump -h 127.0.0.1 -u [用户名] -p [数据库名] [数据表名] > [导出数据表路径]/[文件名].sql` | 导出数据表 | 无
 `source [文件名]` | 导入数据表 | 无
+`select [字段名] from [数据表名] where [where 子句] into outfile '[文件路径]';` | 查询结果导出到文件 | 无
 
-### nginx 操作指令
+## nginx 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
 `nginx -t -c /etc/nginx/nginx.conf` | 测试 nginx | 无
 `vim /etc/nginx/nginx.conf` | 配置 nginx | 无
 `cd /etc/nginx/conf.d/` | cd 到 nginx 配置目录 | 无
-`nginx start` | 启动 nginx | 无
-`nginx restart` | 重启 nginx | 无
+`service nginx start` | 启动 nginx | 无
+`service nginx restart` | 重启 nginx | 无
 
-### git 操作指令
+## git 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
 `git init` | 初始化 git | 无
-`git remote add origin [git clone 链接]` | 克隆远端 git 仓库 | 无
+`git remote add origin [git clone 链接]` | 为初始化的 git 添加远程仓库(后 origin 即为 git clone 链接) | 无
 `git checkout -b [分支名]` | 切换分支 | 无
+`git checkout [想撤销的文件名]` | 撤销对指定文件的修改(若为.，即所有已修改但未提交的文件，不包括新增的文件) | 无
+`cd [代码所在目录]` `git init` `git remote add origin git@github.com:slowmist/[git clone 链接]` `git pull origin master:master` `git status` `git add [添加文件名]` `git commit -m "[提交备注内容]"` `git push -u origin master` | 已有代码 push 到 git | 无
 
-### docker 操作指令
+## docker 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
 `docker ps -a` | 查看 docker 中的容器列表 | 无
 `docker start [容器 ID]` | 启动对应的容器 | 无
+
+## Neo4j-Cypher 操作指令
+指令 | 用法 | 示例
+---------|----------|---------
+`1` | 删除节点的转出节点 | 无
