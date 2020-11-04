@@ -90,3 +90,11 @@ def get_intersection(list1, list2):
 
 get_intersection(["1", "2", "3", "5"], ["2", "4", "5"])
 ```
+
+### 生成 hash
+```python
+# 生成 xxx_hash_id
+raw_string = 字段1 + 字段2 + str(int(time.time()))
+bytes_string = bytes(raw_string, encoding="utf8")
+xxx_hash_id = hashlib.md5(bytes_string).hexdigest()
+```
