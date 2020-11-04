@@ -60,21 +60,17 @@ class BaseModel(Model):
         database = MYSQL_DB
 
 
-class MinePoolAddressRecord(BaseModel):
-    """MinePoolAddressRecord 模型类"""
-    coin = CharField(max_length=10)
-    address = CharField(max_length=100)
-    name = CharField(max_length=50, default="unknown")
-    decode_coinbase = TextField(null=True)
-    repeat = IntegerField(default=1)
+class xxxRecord(BaseModel):
+    """xxxRecord 模型类"""
+    pass
 
     class Meta:
-        db_table = 'mine_pool_address_record'
+        db_table = 'xxx_record'
         constraints = [SQL('UNIQUE KEY(coin, address)')]
 
 # 查询数据
-address_watch_datas = AddressWatchRecord.get(watch_id=watch_id)
-watch_address = address_watch_datas.address
+xxx_datas = xxxRecord.get(watch_id=watch_id)
+xxx_address = xxx_datas.address
 ```
 
 ## 文件打开
@@ -83,4 +79,14 @@ watch_address = address_watch_datas.address
 with open(FILE_PATH + FILE_NAME, 'r') as xxx_file:
     for xxx_file_line in xxx_file.readlines():
         pass
+```
+
+## 常见代码
+
+### 两数组取交集
+```python
+def get_intersection(list1, list2):
+    return [x for x in list1 if x in list2]
+
+get_intersection(["1", "2", "3", "5"], ["2", "4", "5"])
 ```
