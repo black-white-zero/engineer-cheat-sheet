@@ -52,6 +52,11 @@
 `df -hl` | 查看磁盘使用空间 | 无
 `htop` | 查看资源使用情况 | 无
 
+### 定时任务
+指令 | 用法 | 示例
+---------|----------|---------
+`*/时间 * * * * cd 脚本路径 && venv路径/venv/bin/python3 -u py脚本 >> 日志文件名.log 2>&1` | 定时运行某 py 脚本，并将标准输出和标准错误输出都输出到日志文件 | 无
+
 ## vim 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
@@ -113,7 +118,7 @@
 指令 | 用法 | 示例
 ---------|----------|---------
 `python3 manage.py collectstatic` | 静态文件生成 | 无
-`python3 manage.py runserver [ip]:[端口号]` | 在对应 ip 和端口号运行 django 服务 | 无
+`python3 manage.py runserver [ip]:[端口号]` | 在对应 ip 和端口号运行 django 服务 | `python3 manage.py runserver 127.0.0.1:8000`
 
 ## iterm2 操作指令
 指令 | 用法 | 示例
@@ -170,6 +175,7 @@
 `git remote add origin [git clone 链接]` | 为初始化的 git 添加远程仓库(后 origin 即为 git clone 链接) | 无
 `git checkout -b [分支名]` | 切换分支 | 无
 `git checkout [想撤销的文件名]` | 撤销对指定文件的修改(若为.，即所有已修改但未提交的文件，不包括新增的文件) | 无
+`git reset HEAD [想撤销的文件名]` | 对添加文件后的撤销 | 无
 `cd [代码所在目录]` `git init` `git remote add origin git@github.com:slowmist/[git clone 链接]` `git pull origin master:master` `git status` `git add [添加文件名]` `git commit -m "[提交备注内容]"` `git push -u origin master` | 已有代码 push 到 git | 无
 
 ## docker 操作指令
@@ -181,4 +187,7 @@
 ## Neo4j-Cypher 操作指令
 指令 | 用法 | 示例
 ---------|----------|---------
-`1` | 删除节点的转出节点 | 无
+`CREATE INDEX ON :标签名(属性名);` | 添加索引 | 无
+`:schema` | 查看索引添加情况 | 无
+`MATCH (n:标签名) WHERE n.属性名="属性值" RETURN n;` | 根据标签名和属性值筛选图数据 | 无
+`profile MATCH (n:标签名) WHERE n.属性名="属性值" RETURN n;` | 查看图数据筛选执行计划 | 无
